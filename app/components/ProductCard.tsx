@@ -5,12 +5,16 @@
 // TODO 3: Render the props inside the JSX with curly braces.
 //         Tip: reuse your <PriceTag /> for the price, and show
 //         "In stock" / "Sold out" based on inStock.
+import PriceTag from "./PriceTag" ;
+type Props ={title:string;price:number;inStock:boolean
+}
+export default function ProductCard({title,price,inStock}:Props) {
 
-export default function ProductCard() {
   return (
     <div className="card">
-      <h3 className="todo">TODO: product title</h3>
-      <p className="todo">show price + stock status</p>
+      <h3 className="todo">{title}</h3>
+      <p className="todo"><PriceTag amount ={price} /></p>
+      <p>Status: {inStock? "In Stock" : "Out of Stock"}</p>
     </div>
   );
 }
